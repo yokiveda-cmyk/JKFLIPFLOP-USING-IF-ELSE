@@ -33,16 +33,55 @@ By using three variable K-Map, we can get the simplified expression for next sta
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
 **Procedure**
+1.Type the program in Quartus software.
 
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 /* write all the steps invloved */
 
 **PROGRAM**
+Program for flipflops and verify its truth table in quartus using Verilog programming.
 
+module jkff(j,k,clk,q,qbar);
+
+input j,k,clk;
+
+output reg q,qbar;
+
+initial
+
+begin
+
+q=1'b0;
+
+q=1'b1;
+
+end
+
+always @(posedge clk)
+
+begin
+
+q<=(j&~q)|(~k&q);
+
+qbar<=~q;
+
+end
+
+endmodule
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
+<img width="800" height="291" alt="image" src="https://github.com/user-attachments/assets/bf370d40-b294-468f-9dd1-921f89d498af" />
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+<img width="794" height="400" alt="image" src="https://github.com/user-attachments/assets/13950cde-72c5-4078-99ff-744e6c28caac" />
 
 **RESULTS**
+Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
